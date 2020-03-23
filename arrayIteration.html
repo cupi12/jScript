@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrayIteration.html</title>
+</head>
+
+<body>
+    <p id="show"></p>
+    <script>
+        var points = [89, 77, 99, 55, 100];
+        var sum = 0;
+        for (var i = 0; i < points.length; i++) {
+            if (i % 2 == 0)
+                sum += points[i];
+
+        }
+        sum = 0;
+        // points.forEach(function(a,b,c){ //a = 배열의 값, b는 인덱스 값, c는 배열 모두
+        points.forEach(callBackFunc);
+        function callBackFunc(a, b, c) {
+            if (b % 2 == 0)
+                sum += a;
+        }
+        console.log("result " + sum);
+
+        var members = [
+            { name: "junwon", score: 80 },
+            { name: "seongwoo", score: 70 },
+            { name: "jaeeon", score: 90 }
+        ]
+        var myTag = "";
+        var myTag = "<table border=1>";
+        myTag += "<tr><th>Name</th><th>Score</th><tr>";
+        members.forEach(function (obj) {
+            myTag += "<tr><td>" + obj.name + "</td><td>" + obj.score + "</td></tr>"
+        });
+        myTag += "</table>";
+        document.getElementById("show").innerHTML = myTag;
+          // console.log(a,b,c);
+          //각각의 요소들을 
+    </script>
+</body>
+
+</html>

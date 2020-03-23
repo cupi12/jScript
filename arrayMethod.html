@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrayMethod.html</title>
+</head>
+<body>
+
+    <p id="show"></p>
+    <script>
+       
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("show").innerHTML = fruits.join("-");
+        fruits[4] = "Kiwi";
+        fruits[5] = "Grape";
+        //pop, push, shit, unshift
+        // fruits.push("Kiwi"); //Kiwi 추가
+        // fruits.unshift("Grape"); //앞에 추가
+        // fruits.pop(); //뒤에서부터 빠짐
+        // fruits.pop(); 
+        // fruits.pop();
+        // fruits.pop();
+        // fruits.shift(); //앞에서부터 빠짐
+        document.getElementById("show").innerHTML = fruits.join("-");
+
+        var newFruits = ["Banana", "Orange", "Apple", "Mango"];
+        newFruits.sort(); //오름차순 정렬
+        newFruits.reverse(); //역순정렬
+        console.log(newFruits);
+
+        var numbers = [1,22,10,100,45];
+        numbers.sort(function(a, b){
+            return a - b;  //(오름차순)
+            //a와 b를 비교해서 a(앞에값) b(뒤에값) 두개를 빼서 음수가 나오면 오름차순 정렬,
+            // 양수가 나오면 내림차순 정렬 (양수가 나오면 변경, 음수가 나오면 변경X)
+            //return b-a;( 내림차순)
+        });
+        console.log(numbers);
+
+        var persons=[
+            {name:"Hong", age:10},{name:"Bak", age:28},{name:"Bak", age:25},{name:"Kim", age:30}
+        ]
+        persons.sort(function(a,b){ 
+        if(a.name > b.name){
+            return 1;  //위치 바꿈
+        }else if(a.name < b.name){
+            return -1;  //그대로
+        }else{
+            return a.age - b.age;
+           // return 0;  //같다
+        }
+    }); //name기준 오름차순 정렬
+        console.log(persons);
+        
+    </script>
+</body>
+</html>
