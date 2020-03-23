@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dataType</title>
+</head>
+
+<body>
+    <script>
+        var length89;
+        var isTrue = false;
+        console.log(typeof isTrue); // typeof == 변수가 어떤 타입인지 봄
+     
+        var friend = { //friend는 object타입이다.
+            firstName: "y33",
+            lastName: "f22ed",
+            age: 27,
+            getFullName: function () {
+                return this.firstName + " , " + this.lastName
+            }
+        }
+
+        var friend1 = { //friend는 object타입이다.
+            firstName: "gildong",
+            lastName: "Hong",
+            age: 27
+        }
+        var friend2 = { //friend는 object타입이다.
+            firstName: "junwon",
+            lastName: "Ha",
+            age: 27          
+        }
+
+        var friend3 = { //friend는 object타입이다.
+            firstName: "y33",
+            lastName: "f22ed",
+            age: 27
+        }
+        var friends = [friend1, friend2, friend3];
+        for (obj in friends) {
+            console.log(obj);
+        }
+        // console.log(typeof(friend3));
+        console.log(friend.firstName + ", " + friend.lastName + "의 나이는 " + friend.age)
+        console.log(friend["firstName"] + ", " + friend["lastName"] + "의 나이는 " + friend["age"]);
+
+        function getName() {
+            return "Hajunwon";
+        }
+        function sum(a, b) {
+            return a + b;
+        }
+        console.log(getName());
+        console.log("결과는 " + sum(10, 20) + "입니다.");
+        console.log(friend.getFullName());
+
+        var numAry = [1, 2, 3, 4, 5,];
+        var strAry = ["hello", "nice", "good"];
+
+        for (var i = 0; i < strAry.length; i++) {
+            console.log(strAry[i])            
+            console.log(numAry[i])
+        }
+
+    </script>
+</body>
+
+</html>
