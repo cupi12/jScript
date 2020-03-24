@@ -33,10 +33,17 @@
         ]
         var myTag = "";
         var myTag = "<table border=1>";
-        myTag += "<tr><th>Name</th><th>Score</th><tr>";
+        myTag += "<tr>
+                    <th>Name</th>
+                    <th>Score</th>
+                    <tr>";
         members.forEach(function (obj) {
-            myTag += "<tr><td>" + obj.name + "</td><td>" + obj.score + "</td></tr>"
+            myTag += "<tr>
+            <td>" + obj.name + "</td>
+            <td>" + obj.score + "</td>
+            </tr>"
         });
+
         myTag += "</table>";
         document.getElementById("show").innerHTML = myTag;
           // console.log(a,b,c);

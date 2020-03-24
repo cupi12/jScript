@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navigation.html</title>
+</head>
+
+<body>
+    <input type="text" id="firstName" value="gildong">
+    <input type="text" name="" id="lastName" value="hong">
+    <input type="text" id="age" value="20">
+    <button id="btn" onclick="translateBtn()">수정</button>
+    <button id="btn" onclick="addBtn()">추가</button>
+    <table id="tbl" border="1" align="center">
+        <tbody>
+            <tr>
+                <td>FirstName</td>
+                <td>LastName</td>
+                <td>Age&nbsp;</td>
+            </tr>
+            <tr>
+                <td>junwon</td>
+                <td>ha</td>
+                <td>27</td>
+            </tr>
+            <tr>
+                <td>gildong</td>
+                <td>hong</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>yun<p>firstName</p>
+                </td>
+                <td>b</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td>nnn</td>
+                <td>fdg</td>
+                <td>66</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        //querySelectorAll 해석 : 테이블 자손들 중, tr태그를 선택 해서 tbs에 답으시요
+        var tds = document.querySelectorAll("#tbl tr"); 
+        tds.forEach(function (a,b){
+        a.onmouseover = function(){
+            this.style.color = "green";
+        }
+        a.onmouseout = function(){
+            this.style.color = "";
+        }
+        a.onclick = function(){
+            alert("ㅗㅗ");
+        }
+    })
+    </script>
+</body>
+
+</html>

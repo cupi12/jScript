@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navigation.html</title>
+</head>
+
+<body>
+    <input type="text" id="firstName" value="gildong">
+    <input type="text" name="" id="lastName" value="hong">
+    <input type="text" id="age" value="20">
+    <button id="btn" onclick="translateBtn()">수정</button>
+    <button id="btn" onclick="addBtn()">추가</button>
+    <table id="tbl" border="1" align="center">
+        <tbody>
+            <tr>
+                <td>FirstName</td>
+                <td>LastName</td>
+                <td>Age&nbsp;</td>
+            </tr>
+            <tr id="1">
+                <td>junwon</td>
+                <td>ha</td>
+                <td>27</td>
+            </tr>
+            <tr id="2">
+                <td>gildong</td>
+                <td>hong</td>
+                <td>20</td>
+            </tr>
+            <tr id="3">
+                <td>yun<p>firstName</p>
+                </td>
+                <td>b</td>
+                <td>23</td>
+            </tr>
+            <tr id="4">
+                <td>nnn</td>
+                <td>fdg</td>
+                <td>66</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var tds = document.getElementsByTagName("td");
+        // console.log(tds[9].childNodes[1].childNodes[0].nodeValue);
+
+        // function translateBtn(){
+        //     var na = document.getElementById("firstName");
+        //     tds[9].childNodes[1].childNodes[0].nodeValue="lastName";
+
+        // }
+
+        // console.log(tds[3].childNodes[0].nodeValue);
+        // console.log(tds[7].childNodes[0].nodeValue);
+        // console.log(tds[11].childNodes[0].nodeValue);
+        var fName = document.getElementById("firstName").value;
+        var lName = document.getElementById("lastName").value;
+        var age = document.getElementById("age").value;
+        console.log(tds[0].childNodes[0].nodeValue);
+        var i = 3;
+        // var i =  tds[i].childNodes[0].nodeValue; 
+        function translateBtn() { //수정 매서드
+        if onclick
+            for (i = 3; i < table.indexnumber; i++) {
+                if (i % 3 == 0) {
+                    tds[i].childNodes[0].nodeValue = fName;
+                } else if (i % 4 == 0) {
+                    tds[i].childNodes[0].nodeValue = lName;
+                } else if (i % 5 == 0) {
+                    tds[i].childNodes[0].nodeValue = age;
+                }
+
+                // switch(i){
+                //     case 3:
+                //     tds[3].childNodes[0].nodeValue = fName;                                
+                //     case 4:
+                //     tds[4].childNodes[0].nodeValue = lName;                                
+                //     case 5:
+                //     tds[5].childNodes[0].nodeValue = age;
+                // }
+            }
+
+
+
+
+
+            function addBtn() {//추가 매서드
+
+                var $tr, $td, $text;
+                $tr = document.createElement("tr");
+
+
+                $text = document.createTextNode(fName);
+                $td = document.createElement("td");
+                $td.appendChild($text);  //부모태그에 자식을 추가해줌
+                $tr.appendChild($td);
+
+                $text = document.createTextNode(lName);
+                $td = document.createElement("td");
+                $td.appendChild($text);
+                $tr.appendChild($td);
+
+                $text = document.createTextNode(age);
+                $td = document.createElement("td");
+                $td.appendChild($text);
+                $tr.appendChild($td);
+
+                tbl.appendChild($tr);
+
+            }
+    </script>
+</body>
+
+</html>
