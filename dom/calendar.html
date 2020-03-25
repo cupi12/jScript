@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calendar.html</title>
+</head>
+
+<body>
+<input type="text" id="year">
+<input type="text" id="month">
+<button id="btn">CreateCalendar</button>
+
+    <script>
+        var btn=document.getElementById("btn");
+        btn.onclick = function(){
+            var yr= document.getElementById("year").value;
+            var mth= document.getElementById("month").value;
+            createCal(yr,mth);
+        }
+        
+        function createCal(y,createCal m) {
+            var year = y;
+            var month = m;
+            var dday = new Date(year, month, 0);
+            console.log(c)
+            //===요일
+            var days = ["일", "월", "화", "수", "목", "금", "토"];
+            var $tr, $td, $text;
+            var $tb = document.createElement("table");
+            $tb.setAttribute("border", 1);
+
+            var $tr = document.createElement("tr");
+
+            days.forEach(function (a,b) {
+            //     if(b==0){
+            //         setAttribute("background-color:red");
+            //     }if(b==6){
+            //         setAttribute("background-color:red");
+            //     }
+
+                $text = document.createTextNode(a);
+                $td = document.createElement("td");
+                $td.appendChild($text);
+                $tr.appendChild($td);
+            });
+            $tb.appendChild($tr);
+            //===========날짜 
+            var totalDay = dday.getDate();
+
+            $tr = document.createElement("tr");
+            for (var i = 1; i <= dday; i++) {
+
+                $td = document.createElement("td");
+                $text = document.createTextNode(i);
+                $td.appendChild($text);
+                $tr.appendChild($td);
+                if (i % 7 == 0) {
+                    $tb.appendChild($tr);
+                    $tr = document.createElement("tr");
+                }
+            }
+            $tb.appendChild($tr);
+            document.body.appendChild($tb);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>morning.html</title>
+    <style>
+        div {
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            float: left;
+            border: 2px blue solid;
+            text-align: center;
+            font-size: 10px;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div onclick="alert(1)">1</div>
+    <div id="">2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <button id="btn">클릭</button>
+
+
+    <script>
+        var btns = document.getElementById("btn");
+        btns.onclick = function(){
+            alert(this.innerHTML)
+        }
+        var $divs = document.getElementsByTagName("div");
+        console.log($divs);
+for(var i = 0; i<$divs.length; i++){
+    $divs[i].setAttribute("style","background-Color : yellow");
+        $divs = document.querySelectorAll("div");
+        $divs..forEach(function(a) {
+            a.setAttribute("style", "background-color:yellow");
+        });
+
+        $divs[i].onmouseover = function(){
+            this.setAttribute("style","background-color:red");
+        }
+        $divs[i].onmouseout = function(){
+            this.setAttribute("Style","background-color : skyblue")
+        }
+        }
+        
+        var $divs2=document.querySelectorAll("div");
+        console.log($divs2)
+        $divs2.fore(function(a){
+            a.setAttribute("style","background-color:yellow");
+        });
+        
+        
+
+
+    </script>
+</body>
+
+</html>

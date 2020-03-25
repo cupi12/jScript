@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Eid:<input type="text" name="" id="eId"><br>
+    Name:<input type="text" name="" id="eName"><br>
+    Phone:<input type="text" name="" id="ePhone"><br>
+    <button id="btn"> Info</button>
+    <table id="tbl">
+        <tr>
+            <td>empId</td>
+            <td>Name</td>
+            <td>Phone</td>
+            <td>Delete</td>
+        </tr>
+    </table>
+    <script>
+
+        var datas = [
+            { empId: 101, name: "scott", phone: "1234" },
+            { empId: 102, name: "sunny", phone: "9373" },
+            { empId: 103, name: "kim", phone: "4633" },
+            { empId: 104, name: "bob", phone: "6291" },
+            { empId: 105, name: "ship", phone: "8927" }
+        ]
+
+        var $tbl = document.getElementById("tbl");
+        var $tr, $td, $text
+        var $title = ["empId", "name", "phone"];
+
+        $tr = document.createElement("tr");
+        datas.forEach(function (obj, ind) {
+            $tr = document.createElement("tr");
+            $tr.setAttribute("id", obj.empId);
+            // $tr.addEventListener("click", clickFnc);
+            $tr.addEventListener("mouseover", mOverFnc);
+            $tr.addEventListener("mouseout", mOutFnc);
+            for (field of $title) {
+                $text = document.createTextNode(obj[field]);
+                $td = document.createElement("td");
+                $td.appendChild($text);
+                $tr.appendChild($td);
+            }
+            //button태그 생성.
+            $text = document.createTextNode("Del");
+            var $btn = document.createElement("button");
+            $btn.onclick = delFunc;
+
+            $btn.appendChild($text);
+            $td = document.createElement("td");
+            $td.appendChild($btn);
+            $tr.appendChild($td);
+            tbl.appendChild($tr);
+
+        });
+        function delFunc() {
+            console.log(this.parentNode.parentNode)
+            this.parentNode.parentNode.remove(); //id값 삭제
+
+        }
+        // function clickFnc() {//마우스 클릭 
+        //     console.log(this.childNodes[0].childNodes[0].nodeValue)
+        //     var artMsg = "id : " + this.childNodes[0].childNodes[0].nodeValue +
+        //     "\nname : " + this.childNodes[1].childNodes[0].nodeValue +
+        //     "\nphone : " + this.childNodes[2].childNodes[0].nodeValue
+        //     alert(artMsg)
+        // }
+        function mOverFnc() {//마우스 오버
+            this.style.background = "yellow";
+
+        }
+        function mOutFnc() {//마우스 아웃
+            this.style.background = "";
+        }
+        var addBtn = document.getElementById("btn");
+        addBtn.addEventListener("click", addInfoFnc);
+
+        function addInfoFnc() {
+            $tr = document.createElement("tr");
+            $tr.setAttribute("id", document.getElementById("eId"));
+            // $tr.addEventListener("click", clickFnc);
+            $tr.addEventListener("mouseover", mOverFnc);
+            $tr.addEventListener("mouseout", mOutFnc);
+            var inputs = document.querySelectorAll("input");
+            inputs.forEach(function (a) {
+                $text = document.createTextNode(a.value);
+                $td = document.createElement("td");
+                $td.appendChild($text);
+                $tr.appendChild($td);
+            })
+
+            //button태그 생성.
+            $text = document.createTextNode("Del");
+            var $btn = document.createElement("button");
+            $btn.onclick = delFunc;
+
+            $btn.appendChild($text);
+            $td = document.createElement("td");
+            $td.appendChild($btn);
+            $tr.appendChild($td);
+            tbl.appendChild($tr);
+
+        }
+
+
+        // function addBtn() {//추가버튼
+
+        //     eid = document.getElementById("eId");
+        //     eName = document.getElementById("eName");
+        //     ePhone = document.getElementById("ePhone");
+
+        //     $td.document.createElement("td");
+
+
+
+        // }
+    </script>
+</body>
+
+</html>
